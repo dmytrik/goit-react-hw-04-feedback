@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import FeedbackOptions from './FeedbackOptions/FeedbackOptions';
 import Statistics from './Statistics/Statistics';
 import Section from './Section/Section';
+import Notification from './Notification/Notification';
 import Box from './Box/Box';
 
 class App extends Component {
@@ -58,7 +59,6 @@ class App extends Component {
               goodFeedback: this.goodFeedback,
               neutralFeedback: this.neutralFeedback,
               badFeedback: this.badFeedback,
-              // onChangeFeedbackStats: this.onChangeFeedbackStats,
             }}
             onLeaveFeedback={{
               good: 'Good',
@@ -77,7 +77,7 @@ class App extends Component {
               positivePercentage={this.countPositiveFeedbackPercentage}
             />
           ) : (
-            <p>No feedback given</p>
+            <Notification message="There is no feedback" />
           )}
         </Section>
       </Box>
