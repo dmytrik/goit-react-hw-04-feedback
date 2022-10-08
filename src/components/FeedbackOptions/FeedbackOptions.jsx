@@ -1,4 +1,5 @@
-import { FeedbackBtnContainer, FeedbackBtn } from './Feedback.styled';
+import PropTypes from 'prop-types';
+import { FeedbackBtnContainer, FeedbackBtn } from './FeedbackOptions.styled';
 
 const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   const { goodFeedback, neutralFeedback, badFeedback } = options;
@@ -13,3 +14,8 @@ const FeedbackOptions = ({ options, onLeaveFeedback }) => {
 };
 
 export default FeedbackOptions;
+
+FeedbackOptions.propTypes = {
+  options: PropTypes.objectOf(PropTypes.func).isRequired,
+  onLeaveFeedback: PropTypes.objectOf(PropTypes.string).isRequired,
+};

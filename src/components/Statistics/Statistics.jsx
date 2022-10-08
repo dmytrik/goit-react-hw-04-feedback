@@ -1,4 +1,5 @@
-import { FeedbackStatBox, FeedbackStat } from './Feedback.styled';
+import PropTypes from 'prop-types';
+import { FeedbackStatBox, FeedbackStat } from './Statistics.styled';
 
 const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
   return (
@@ -17,3 +18,11 @@ const Statistics = ({ good, neutral, bad, total, positivePercentage }) => {
 };
 
 export default Statistics;
+
+Statistics.propTypes = {
+  good: PropTypes.number.isRequired,
+  neutral: PropTypes.number.isRequired,
+  bad: PropTypes.number.isRequired,
+  total: PropTypes.func.isRequired,
+  positivePercentage: PropTypes.func.isRequired,
+};
